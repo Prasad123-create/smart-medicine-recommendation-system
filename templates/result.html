@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h2>Problem: {{ problem }}</h2>
+
+    {% if medicines %}
+
+        <h3>Recommended Medicines:</h3>
+
+        {% for medicine in medicines %}
+
+            <div class="medicine">
+                💊 {{ medicine[0] }}
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <h3>No medicine found.</h3>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/">
+        <button>Back</button>
+    </a>
+
+    <hr><br>
+
+    <p style="color:red;">
+
+        ⚠ This application is for educational purposes only.
+        Please consult a qualified doctor before taking any medicine.
+
+    </p>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 Smart Medicine Recommendation System
+    </p>
+
+</footer>
+
+</body>
+</html>

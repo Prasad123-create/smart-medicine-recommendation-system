@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Medicine</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Edit Medicine</h1>
+
+<form action="/update/{{ medicine[0] }}" method="POST">
+
+<label>Problem</label><br>
+
+<input
+type="text"
+name="problem"
+value="{{ medicine[1] }}"
+required>
+
+<br><br>
+
+<label>Medicine</label><br>
+
+<input
+type="text"
+name="medicine"
+value="{{ medicine[2] }}"
+required>
+
+<br><br>
+
+<button type="submit">
+
+Update Medicine
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/view_medicines">
+
+<button>
+
+Back
+
+</button>
+
+</a>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 Smart Medicine Recommendation System
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
